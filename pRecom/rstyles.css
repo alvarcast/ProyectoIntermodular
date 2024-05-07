@@ -235,7 +235,6 @@ header{
 
 .recomBox{
     height: fit-content;
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -244,22 +243,28 @@ header{
     border: solid 10px;
     border-color: #191919;
     margin-bottom: 2em;
+    display: flex;
 }
 
 .items{
     display: flex;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .info{
     font-size: 120%;
-    height: min-content;
+    min-height: 10em;
     text-align: center;
     display: flex;
     flex-direction: column;
     width: auto;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: 3em;
+    margin-top: 1em;
+    padding-bottom: 3em;
+    word-wrap: break-word
 }
 
 .portada{
@@ -297,17 +302,21 @@ header{
 }
 
 .estrellas img{
-    height: 35px;
+    height: 32px;
     width: 145px;
 }
 
 .txt{
-    display: flex;
-    justify-content: center;
     margin-top: 2em;
-    margin-bottom: 1em;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+    word-wrap: break-word
 }
+
+
 
 .likedislike{
     display: flex;
@@ -321,6 +330,8 @@ header{
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
+    height: 100%;
 }
 
 .btn{
@@ -381,7 +392,7 @@ footer a{
     color: darkgrey;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1150px) {
 
     .portada{
         min-width: 300px;
@@ -420,6 +431,12 @@ footer a{
 
     .info{
         margin-top: 2em;
+    }
+
+    .alineador{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
 
 }

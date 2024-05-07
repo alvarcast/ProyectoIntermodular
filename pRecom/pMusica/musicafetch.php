@@ -1,8 +1,5 @@
 <?php
 
-// I'll try to format in a way to be easy to understand.
-// Defining an order and adding a limit are also important.
-
 $sql = 'SELECT nombre,
 artista,
 texto,
@@ -19,19 +16,11 @@ ORDER BY nombre
 LIMIT 20';
 
 $mysqliresult = $conn->query($sql);
-// Return an array of associative arrays, representing rows and columns.
-// This is the standard way of dealing with many database records.
 $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);
-
-// Little tip #1: the if/elseif/else block can be changed to a map (used later):
-
-// Little tip #2: avoid writing HTML content as/in PHP strings, it makes it very hard to write and understand.
-// The basic approach is to fetch all needed data in variables, "drop off" of PHP mode and start writing HTML using the alternative PHP syntax for templates (link below):
 
 ?>
 
 <?php foreach ($results as $item):
-// Here we can use map above:
 if($item['valoracion'] == 1){
     $valoracion = "../../common/img/1star.png";
 }elseif($item['valoracion'] == 2){
@@ -48,7 +37,7 @@ if($item['valoracion'] == 1){
 <section class='recomBox'>
 <div class='items'>
 <div class='portada'>
-<a href='#'><img src='#'></a>
+<img src='img/r1m.jpg'></a>
 </div>
 <div class='alineador'>
 <div class='info'>
@@ -59,7 +48,7 @@ if($item['valoracion'] == 1){
 <p id='desc2'>Usuario: <?= htmlspecialchars($item['nombreusuario'], ENT_QUOTES, 'UTF-8') ?></p>
 </div>
 <div class='estrellas'>
-<img src='$valoracion'>
+<img src='<?php echo htmlspecialchars($valoracion); ?>'>
 </div>
 <div class='txt'>
 <p><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></p>

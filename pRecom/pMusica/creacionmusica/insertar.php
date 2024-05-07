@@ -18,7 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $genero = $_POST["genero"];
   $texto = $_POST["texto"];
   $valoracion = $_POST["valoracion"];
-  $imagen = $_POST["imagen"];
+  $img = $_POST["file"];
+
+  // Getting uploaded file
+  $file = $_FILES["file"];
+ 
+  // Uploading in "uplaods" folder
+  move_uploaded_file($file["tmp_name"], "../img/" . $file["name"]);
 
   $sql = "SELECT IdUsuario FROM usuarios WHERE IdUsuario = ".$_SESSION['id'];
   $result = $conn->query($sql);
@@ -26,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Preparar la consulta SQL para la inserción de datos
   $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, Likes, Dislikes, IdUsuario, IdGeneroMusica)
-          VALUES ('$nombre', '$artista', '$texto', $valoracion, '$imagen',0,0,$uid,$genero)";
+          VALUES ('$nombre', '$artista', '$texto', $valoracion, '$img',0,0,$uid,$genero)";
 
   // Ejecutar la consulta
   if ($conn->query($sql) === TRUE) {

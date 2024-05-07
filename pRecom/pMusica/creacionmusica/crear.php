@@ -73,7 +73,7 @@
     </div>
   </header>
   
-  <form class="formulario" method="post" action="insertar.php">
+  <form class="formulario" method="post" action="insertar.php" enctype="multipart/form-data">
     <h1 id="textoform">Recomendacion de Musica</h1>
 
     <div class="nombre">
@@ -125,12 +125,12 @@
     </div>
 
     <div class="imagen">
-      <label for="imagen">Imagen</label><br>
-      <input type="file" id="imagen" name="imagen">
+      <label for="file">Imagen</label><br>
+      <input type="file" id="file" name="file">
     </div>
 
     <div class="boton">
-      <a href="crear_sesion.php"><input type="submit">
+      <input type="submit">
     </div>
   </form>
 
