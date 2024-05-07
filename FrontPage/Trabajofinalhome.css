@@ -1,0 +1,527 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../common/img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+}
+
+h5{
+    color: aqua;
+    margin-top: 5%;
+}
+
+header{
+    height: fit-content;
+    border-bottom: solid 5px;
+    border-color: #191919;
+    width: 100%;
+    background-color: #212529;
+}
+
+.objheader{
+    padding-top: 1.1em;
+    padding-bottom: 1.1em;
+    font-size: larger;
+}
+
+.objizquierda{
+    display: flex;
+    position: absolute;
+    padding: 3px;
+}
+
+.objizquierda a{
+    padding-left: 2em;
+    color: #636363;
+}
+
+.objderecha{
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   margin-right: 2em;
+}
+
+.objizquierda button{
+    display: none;
+    background-color: #212529;
+    border: none;
+    margin-left: 1em;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    cursor: pointer;
+}
+
+.objizquierda button:hover{
+    background-color: #636363;
+}
+
+.sidetxt{
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    background-color: #212529;
+}
+
+#opcion{
+    color: #636363;
+    font-size: larger;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #212529;
+    text-align: center;
+    cursor: pointer;
+}
+
+#cerrar{
+    background-color: #636363;
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+}
+
+#opcion:hover{
+    background-color: #919191;
+}
+
+#cerrar:hover{
+    background-color: #919191;
+}
+
+.barra input[type=text] {
+    font-size: 15px;
+    border: solid 1px;
+    border-color: #636363;
+    background-color: #212529;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+    padding: 3px;
+    padding-left: 5px;
+    margin-right: 0.5em;
+}
+
+.barra button {
+    background: #636363;
+    font-size: 15px;
+    border: solid 1px;
+    border-color: #636363;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+    padding: 3px;
+}
+
+.barra button:hover{
+    background-color: #919191;
+}
+
+.login{
+    font-size: large;
+    margin-right: 1.5em;
+}
+
+.login button{
+    background: #636363;
+    font-size: 15px;
+    border: solid 1px;
+    border-color: #636363;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+    padding: 3px;
+}
+
+.login a{
+    color: #636363;
+}
+
+.logo{
+   display: block;
+   text-align: center;
+   height: 100px;
+   width: 100px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 2em;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides {
+	display: none;
+}
+
+.sscontainer {
+  margin-top: 2em;
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1350px;
+}
+
+.ssimg{
+    width: 100%;
+    border: solid 5px;
+    border-color: #212529;
+}
+
+.ssimg img{
+    width: 100%;
+    height: 100%;
+    max-height: 720px;
+}
+
+.prev, .next {
+	cursor: pointer;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	transition: 0.4s ease;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.prev a, .next a{
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+}
+
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.dot {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+    margin-top: 1em;
+	background-color: #212529;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: white;
+}
+
+.mySlides {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	animation-name: fade;
+	animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.textaco{
+    margin-top: 3em;
+}
+
+.wrapper {
+    display: grid;
+    place-content: center;
+    height: fit-content;
+    font-family: "Oswald", sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+  
+.wrapper > div {
+    grid-area: 1/1/-1/-1;
+}
+
+.top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+
+.bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: -webkit-linear-gradient(177deg, black 53%, white 65%);
+    background: linear-gradient(177deg, black 53%, white 65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
+}
+
+.prelogo{
+    text-align: center;
+    margin: 1%;
+
+}
+
+.prelogo img{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: solid 5px;
+    border-color: #191919;
+    background-color: #212529;
+    width: 95%;
+}
+
+.container img{
+    margin-top: 1.5em;
+    border: solid 5px;
+    border-color: #191919;
+}
+
+#primeraimagencartas, #segundaimagencartas, #terceraimagencartas{
+    width: 420px; 
+    height: 240px;
+}
+
+.containertexto p, h5{
+    font-size: 25px;
+}
+
+#primeraimagencartas{
+    margin-right: 2.1em;
+    margin-left: 3%;
+}
+
+#terceraimagencartas{
+    margin-left: 2.1em;
+    margin-right: 3%;
+}
+
+.containertexto{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 20px;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#ultparrafo{
+    margin-bottom: 1.5em;
+}
+
+#imagenescondida{
+    display: none;
+}
+
+footer{
+    background-color: #212529;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    border-top: solid 5px;
+    border-color: #191919;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 2em;
+}
+
+footer a{
+    color: darkgrey;
+}
+
+footer a:hover{
+    background-color: #919191;
+}
+
+@media only screen and (max-width: 1850px) {
+
+    img#primeraimagencartas{ 
+        margin-right: 1%;
+    }
+
+    img#terceraimagencartas{
+        margin-left: 1%;
+    }
+}
+
+@media only screen and (max-width: 1485px) {
+
+    .prelogo img{
+        height: 60%;
+        width: 60%;
+    }
+
+    #primeraimagencartas, #segundaimagencartas, #terceraimagencartas{
+        height: 25%;
+        width: 25%;
+        margin-top: 2%;
+    }
+
+    #primeraimagencartas{
+        margin-right: 2%;
+    }
+    
+    #terceraimagencartas{
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+
+    .objizquierda a{
+        display: none;
+    }
+
+    .login{
+        display: none;
+    }
+
+    .objizquierda button{
+        display: block;
+    }
+
+    .objderecha{
+        margin-right: 5%;
+    }
+
+    .wrapper{
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+
+    .prev, .next {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .dot{
+	width: 7px;
+    height: 7px;
+    }
+
+    .container{
+        width: 80%;
+    }
+
+    .containertexto{
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .containertexto p, h5{
+        font-size: large;
+    }
+
+    .containerimg{
+        display: none;
+    }
+
+    #imagenescondida{
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 1em;
+        width: 420px; 
+        height: 240px;
+        height: 80%;
+        width: 80%;
+    }
+
+    .wrapper{
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+}
+
+@media only screen and (min-width: 1500px) {
+
+    .sscontainer{
+        max-width: 1560px;
+    }
+
+    .container img{
+        width: 20%;
+        height: 20%;
+    }
+
+    #primeraimagencartas{
+        margin-right: 10%;
+    }
+
+    #terceraimagencartas{
+        margin-left: 10%;
+    }
+
+    h5{
+        margin-top: 1.5em;
+    }
+
+    .containertexto{
+        font-size: xx-large;
+    }
+
+    .containertexto p{
+        font-size: xx-large;
+    }
+
+    .prelogo img{
+        height: 50%;
+        width: 50%;
+    }
+
+    .prev, .next {
+        font-size: 50px;
+        font-weight: normal;
+    }
+
+    .dot{
+	width: 20px;
+    height: 20px;
+    }
+}

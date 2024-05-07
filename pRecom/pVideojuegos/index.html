@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos</title>
+    <link rel="stylesheet" href="../rstyles.css">
+    <link rel="icon" type="image/x-icon" href="../../common/img/logo.png">
+</head>
+<body>
+    <header>
+        <div class="objheader">
+          <div class="objizquierda">
+            <button onclick="abrir()">☰</button>
+          </div>
+           <div class="objderecha">
+             <div class="login">
+                    <a href="../../user/login/index.php">Iniciar Sesion</a>
+             </div>
+             <div class="barra">
+                    <input type="text" placeholder="Busqueda..." name="search">
+                    <button type="submit">Buscar</button>
+             </div>
+           </div>
+        </div>
+        <div class="sidetxt" style="display:none" id="mySidebar">
+          <button id="cerrar" onclick="cerrar()">&times;</button>
+          <a id="opcionOC" href="../../user/login/index.php"><button id="opcion">Iniciar Sesion</button></a>
+          <a id="opcion" href="../../FrontPage/Trabajofinalhome.html"><button id="opcion">Inicio</button></a>
+          <a id="opcion" href="../pMusica/index.html"><button id="opcion">Musica</button></a>
+          <a id="opcion" href="../pPelis/index.html"><button id="opcion">Peliculas</button></a>
+          <a id="opcion" href="../pSeries/index.html"><button id="opcion">Series</button></a>
+        </div>
+    </header>
+
+    <section class="wrapper">
+        <div class="top">Videojuegos</div>
+        <div class="bottom" aria-hidden="true">Videojuegos</div>
+    </section>
+
+    <div class="selectores">
+        <select id="selec1">
+            <option value="Destacado">Destacado</option>
+            <option value="Lo mas Reciente">Lo mas Reciente</option>
+            <option value="En Alza">En Alza</option>
+        </select>
+        <select id="selecsus">
+            <option value="V0">Generos</option>
+            <option value="V1">Accion</option>
+            <option value="V2">Aventura</option>
+            <option value="V3">Arcade</option>
+            <option value="V4">Deportes</option>
+            <option value="V5">Estrategia</option>
+            <option value="V6">Simulacion</option>
+            <option value="V7">De Mesa</option>
+            <option value="V8">Musical</option>
+            <option value="V9">Sandbox</option>
+            <option value="V10">Indie</option>
+            <option value="V11">Puzles</option>
+            <option value="V12">Idle</option>
+            <option value="V13">Terror</option>
+            <option value="V14">RPG</option>
+            <option value="V15">Supervivencia</option>
+            <option value="V16">Novela Visual</option>
+            <option value="V17">Plataformas</option>
+        </select>
+        <a id="creacion" href="../../user/creacionrecom/index.html"><button>+</button></a>
+    </div>
+
+    <section class="recomBox">
+        <div class="items">
+            <div class="portada">
+                <a href="#"><img src="../../common/img/r1v.jpeg"></a>
+            </div>
+            <div class="alinealdor">
+                <div class="info">
+                    <div class="cabezaRecom">
+                        <p id="desc1">Cancion: Purgatori</p>
+                        <p id="desc1">Artista: Koraii</p>
+                        <p>Genero: Electronica</p>
+                        <p id="desc2">Usuario: usuario123456789</p>
+                    </div>
+                    <div class="estrellas">
+                        <img src="../../common/img/stars.png">
+                    </div> 
+                    <div class="txt">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.
+                        </p>
+                    </div>
+                </div>
+                <div class="likedislike">
+                    <div class="like">
+                        <button class="btn" id="green">↑</button>
+                    </div>
+                    <div class="dislike">
+                        <button class="btn" id="red">↓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="../../user/avisoslegales/index.html" target="_blank">Avisos Legales</a>
+    </footer>
+    
+    <script src="../../common/js/sidebar.js"></script>
+    <script src="../../common/js/likedislike.js"></script>
+    
+</body>
+</html>
