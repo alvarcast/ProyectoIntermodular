@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../rstyles.css">
     <link rel="icon" type="image/x-icon" href="../../common/img/logo.png">
 </head>
+<style media="screen">
+    .seleccionado{
+        color: white;
+        outline: 1px solid black;
+    }
+</style>
 <body>
 
     <?php

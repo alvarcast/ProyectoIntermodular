@@ -7,7 +7,6 @@ btn1.addEventListener('click', function() {
       btn2.classList.remove('red');
     } 
   this.classList.toggle('green');
-  
 });
 
 btn2.addEventListener('click', function() {
@@ -16,5 +15,4 @@ btn2.addEventListener('click', function() {
       btn1.classList.remove('green');
     } 
   this.classList.toggle('red');
-  
 });

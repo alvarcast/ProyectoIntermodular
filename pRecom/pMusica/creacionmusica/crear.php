@@ -126,11 +126,11 @@
 
     <div class="imagen">
       <label for="file">Imagen</label><br>
-      <input type="file" id="file" name="file">
+      <input type="file" id="file" name="file"  accept="image/*">
     </div>
 
     <div class="boton">
-      <input type="submit">
+      <input type="submit" value="Enviar">
     </div>
   </form>
 

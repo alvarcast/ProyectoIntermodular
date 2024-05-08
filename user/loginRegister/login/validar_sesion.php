@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($result->num_rows == 1){
 
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+            header("Location: ../../../FrontPage/index.php");
+            //header("Location: " . $_SERVER["HTTP_REFERER"]);
 
         }else{
 
