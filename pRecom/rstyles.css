@@ -306,7 +306,7 @@ header{
     width: 145px;
 }
 
-.txt{
+.texto{
     margin-top: 2em;
     text-align: center;
     margin-right: auto;
@@ -315,8 +315,6 @@ header{
     width: 100%;
     word-wrap: break-word
 }
-
-
 
 .likedislike{
     display: flex;

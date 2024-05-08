@@ -21,12 +21,6 @@
             
         session_start();
 
-        include "infofetch/name.php";
-        include "infofetch/karma.php";
-        include "infofetch/desc.php";
-        include "infofetch/img.php";
-        include "infofetch/uid.php";
-
     ?>
 
     <header>
@@ -71,67 +65,86 @@
 
             ?>
 
-            <a id="opcion" href="../../pRecom/pMusica/index.html"><button id="opcion">Musica</button></a>
-            <a id="opcion" href="../../pRecom/pVideojuegos/index.html"><button id="opcion">Videojuegos</button></a>
-            <a id="opcion" href="../../pRecom/pPelis/index.html"><button id="opcion">Peliculas</button></a>
-            <a id="opcion" href="../../pRecom/pSeries/index.html"><button id="opcion">Series</button></a>
+            <a id="opcion" href="../../pRecom/pMusica/musica.php"><button id="opcion">Musica</button></a>
+            <a id="opcion" href="../../pRecom/pVideojuegos/index.php"><button id="opcion">Videojuegos</button></a>
+            <a id="opcion" href="../../pRecom/pPelis/index.php"><button id="opcion">Peliculas</button></a>
+            <a id="opcion" href="../../pRecom/pSeries/index.php"><button id="opcion">Series</button></a>
         </div>
     </header>
 
-    <h1>Perfil</h1>
+    <section class="wrapper">
+        <div class="top">Perfil</div>
+        <div class="bottom" aria-hidden="true">Perfil</div>
+    </section>
 
-    <div class="cajausuario">
-        <div class="cabeza">
-            <div class="imagencabeza">
+    <?php include "usuariofetch.php" ?>
 
-            <?php
+    <section class="wrapper">
+        <div class="top">Recomendaciones</div>
+        <div class="bottom" aria-hidden="true">Recomendaciones</div>
+    </section>
 
-            if($img = " " OR $img = null){
-                echo "<img src='../../common/img/default.png'>";
-            }elseif(isset($img)){
-                echo "<img src='$img'>";
-            }
-
-            ?>
-                
-            </div>
-            <div class="pcabeza">
-                <div class="pflex">
-                    <div class="sec1">
-                        <h2>Nombre de usuario:</h2>
-
-                        <?php echo "<p>$name</p>"; ?>
-
-                    </div>
-                    <div class="sec2">
-                        <h2>Puntuacion:</h2>
-
-                        <?php echo "<p>$karma</p>"; ?>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="descripcion">
-            <h3>Descripcion:</h3>
-            <form action="update/actualizar.php" method="post">
-
-                <?php echo "<textarea name='desc' placeholder='Escribe algo sobre ti...'>$desc</textarea>"; ?>
-                
-                <div class="alibot">
-                    <input type="file" accept=".jpg, .jpeg, .png" name="imgusu"></input>
-                    <button type="submit">Enviar</button>
-
-                    <?php echo "<p id='uid'>UID: $uid</p>"; ?>
-
-                </div>
-            </form>
-        </div>
+    <div class="selectores">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+            <select name="opcion" onchange="this.form.submit()">
+                <option value="1">Musica</option>
+                <option value="2">Videojuegos</option>
+                <option value="3">Peliculas</option>
+                <option value="4">Series</option>
+            </select>
+        </form>
+        <select class="selecsus">
+            <option value="0">Generos</option>
+            <option value="1">Clasica</option>
+            <option value="2">Jazz</option>
+            <option value="3">Blues</option>
+            <option value="4">Gospel</option>
+            <option value="5">Soul</option>
+            <option value="6">Pop</option>
+            <option value="7">Rock and Roll</option>
+            <option value="8">Country</option>
+            <option value="9">Electronica</option>
+            <option value="10">Disco</option>
+            <option value="11">Reggae</option>
+            <option value="12">Salsa</option>
+            <option value="13">Flamenco</option>
+            <option value="14">Ranchera</option>
+            <option value="15">Rap</option>
+            <option value="16">Reggaeton</option>
+            <option value="17">Metal</option>
+            <option value="18">Funk</option>
+            <option value="19">Bossa Nova</option>
+            <option value="20">Melodica</option>
+            <option value="21">Infantil</option>
+        </select>
+        
+        <a id='creacion' href='../../pRecom/pMusica/creacionmusica/crear.php'><button>+</button></a>
     </div>
+    
 
-    <h1>Recomendaciones</h1>
+    <?php
 
-    <?php include"../../pRecom" ?>
+    include "../../common/php/conexion.php";
+
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    if(isset($_POST['opcion'])) {
+        // No file was selected for upload, your (re)action goes here
+        $opcion = $_POST['opcion'];
+    
+    }else{
+        $opcion = 1;
+    }
+
+    if($opcion == 1){
+        include "urfetch/mfetch.php";
+    }
+
+    ?>
 
     <footer>
         <a href="../avisoslegales/index.html" target="_blank">Avisos Legales</a>

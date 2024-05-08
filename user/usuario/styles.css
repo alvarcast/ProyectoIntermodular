@@ -143,13 +143,37 @@ header{
     color: #636363;
 }
 
-h1{
-    color: white;
+.wrapper {
     margin-top: 0.5em;
-    font-size: 5em;
-    text-decoration: underline;
     margin-bottom: 0.5em;
-    text-align: center;
+    display: grid;
+    place-content: center;
+    height: fit-content;
+    font-family: "Oswald", sans-serif;
+    font-size: 5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+  
+.wrapper > div {
+    grid-area: 1/1/-1/-1;
+}
+
+.top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+
+.bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: -webkit-linear-gradient(177deg, black 53%, white 65%);
+    background: linear-gradient(177deg, black 53%, white 65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
 }
 
 .cajausuario{
@@ -172,7 +196,7 @@ h1{
     min-width: 250px;
     display: flex;
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .cabeza img{
@@ -249,6 +273,12 @@ textarea{
   cursor: pointer;
 }
 
+.alibot p{
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 80%;
+}
+
 .descripcion button{
   margin-left: auto;
   margin-right: auto;
@@ -289,32 +319,84 @@ textarea{
     margin-bottom: 0.5em;
 }
 
+.selectores{
+    display: flex;
+    margin-bottom: 3%;
+    margin-left: 5%;
+}
+
+select{
+    border: solid 5px;
+    width: 10em;
+    height: 3em;
+    border-color: #191919;
+    background-color: #212529;
+    color: white;
+    padding: 1%;
+    font-size: 100%;
+}
+
+.selecsus{
+    float: right;
+}
+
+#creacion{
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 5%;
+    height: 3em;
+    width: 3em;
+    border: solid 5px;
+    border-color: #191919;
+}
+
+#creacion button{
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    font-weight: 100;
+    background-color: #212529;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#creacion button:hover{
+    background-color: #535353;
+}
+
 .recomBox{
     height: fit-content;
-    width: fit-content;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     background-color: #212529;
     color: white;
     border: solid 10px;
     border-color: #191919;
     margin-bottom: 2em;
+    display: flex;
 }
 
 .items{
     display: flex;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .info{
     font-size: 120%;
-    height: min-content;
+    min-height: 10em;
     text-align: center;
     display: flex;
     flex-direction: column;
     width: auto;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: 3em;
+    margin-top: 1em;
+    padding-bottom: 3em;
+    word-wrap: break-word
 }
 
 .portada{
@@ -352,16 +434,18 @@ textarea{
 }
 
 .estrellas img{
-    height: 25px;
+    height: 32px;
     width: 145px;
 }
 
-.txt{
-    display: flex;
-    justify-content: center;
+.texto{
     margin-top: 2em;
-    margin-bottom: 1em;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+    word-wrap: break-word
 }
 
 .likedislike{
@@ -371,11 +455,18 @@ textarea{
     margin-top: 2em;
 }
 
+.likedislike p{
+    text-align: center;
+    margin-bottom: 0.3em;
+}
+
 .alineador{
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 100%;
 }
 
 .btn{
@@ -553,7 +644,7 @@ footer a:hover{
     }
 }
 
-@media only screen and (max-width: 520px){
+@media only screen and (max-width: 540px){
 
     h1{
         font-size: 200%;
@@ -563,6 +654,10 @@ footer a:hover{
         height: 200px;
         width: auto;
         min-width: 200px;
+    }
+
+    .selectores{
+        flex-direction: column;
     }
 }
 
@@ -576,6 +671,10 @@ footer a:hover{
 
     .sec1, .sec2{
         width: 100%;
+    }
+
+    .wrapper{
+        font-size: 4em;
     }
 
 }

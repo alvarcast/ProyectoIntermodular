@@ -1,19 +1,19 @@
 <?php
 
 $sql = 'SELECT idmusica,
-likes,
-dislikes,
 nombre,
 artista,
 texto,
 valoracion,
 imgmusica,
+likes,
+dislikes,
 nombreusuario,
 generomusica
 FROM recomendacion_m
 INNER JOIN usuarios ON usuarios.idusuario = recomendacion_m.idusuario
 INNER JOIN genero_m ON genero_m.idgeneromusica = recomendacion_m.idgeneromusica
-ORDER BY nombre
+ORDER BY idmusica DESC
 LIMIT 20';
 
 $mysqliresult = $conn->query($sql);
@@ -61,11 +61,11 @@ $imagen = "img/".$item['imgmusica']."";
             </div>
             <div class='likedislike'>
                 <div class='like'>
-                    <span class="totallikes"><?= htmlspecialchars($item['likes'], ENT_QUOTES, 'UTF-8') ?></span>
+                    <p class="totallikes"><?= htmlspecialchars($item['likes'], ENT_QUOTES, 'UTF-8') ?></p>
                     <button class="btn" id='green'>↑</button>
                 </div>
                 <div class='dislike'>
-                    <span class="totaldislikes"><?= htmlspecialchars($item['dislikes'], ENT_QUOTES, 'UTF-8') ?></sp>
+                    <p class="totaldislikes"><?= htmlspecialchars($item['dislikes'], ENT_QUOTES, 'UTF-8') ?></p>
                     <button class="btn" id='red'>↓</button>
                 </div>
             </div>

@@ -108,16 +108,9 @@
             <option value="20">Melodica</option>
             <option value="21">Infantil</option>
         </select>
+        
+        <a id='creacion' href='<?php if(isset($_SESSION['id'])){echo"creacionmusica/crear.php";}else{echo"../../user/loginRegister/login/login.php";} ?>'><button>+</button></a>
 
-        <?php
-
-        if(isset($_SESSION['id'])){
-
-            echo "<a id='creacion' href='creacionmusica/crear.php'><button>+</button></a>";
-
-        }
-
-        ?>
 
     </div>
 

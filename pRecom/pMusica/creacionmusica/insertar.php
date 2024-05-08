@@ -30,9 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   }
 
-  $sql = "SELECT IdUsuario FROM usuarios WHERE IdUsuario = ".$_SESSION['id'];
-  $result = $conn->query($sql);
-  $uid = $result->fetch_array()[0];
+  $uid = $_SESSION['id'];
 
   // Preparar la consulta SQL para la inserción de datos
   $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, likes, dislikes, IdUsuario, IdGeneroMusica)
@@ -41,7 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Ejecutar la consulta
   if ($conn->query($sql) === TRUE) {
-      header("location: ../musica.php");
+      $sql2 = "UPDATE usuarios SET karma = (karma + 10) WHERE IdUsuario = ". $_SESSION['id'];
+      if ($conn->query($sql2) === TRUE) {
+        header("location: ../musica.php");
+      } else {
+        echo "Error al insertar datos: " . $conn->error . "<br>";
+      }
   } else {
       echo "Error al insertar datos: " . $conn->error . "<br>";
   }
