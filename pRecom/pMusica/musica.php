@@ -85,28 +85,217 @@
             <option value="En Alza">En Alza</option>
         </select>
         <select id="selecsus">
-            <option value="0">Generos</option>
-            <option value="1">Clasica</option>
-            <option value="2">Jazz</option>
-            <option value="3">Blues</option>
-            <option value="4">Gospel</option>
-            <option value="5">Soul</option>
-            <option value="6">Pop</option>
-            <option value="7">Rock and Roll</option>
-            <option value="8">Country</option>
-            <option value="9">Electronica</option>
-            <option value="10">Disco</option>
-            <option value="11">Reggae</option>
-            <option value="12">Salsa</option>
-            <option value="13">Flamenco</option>
-            <option value="14">Ranchera</option>
-            <option value="15">Rap</option>
-            <option value="16">Reggaeton</option>
-            <option value="17">Metal</option>
-            <option value="18">Funk</option>
-            <option value="19">Bossa Nova</option>
-            <option value="20">Melodica</option>
-            <option value="21">Infantil</option>
+            <option value="M0">Generos</option>
+            <option value="M1">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '1'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M2">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '2'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M3">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '3'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M4">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '4'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M5">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '5'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M6">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '6'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M7">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '7'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M8">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '8'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M9">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '9'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M10">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '10'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M11">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '11'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M12">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '12'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M13">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '13'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M14">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '14'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M15">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '15'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M16">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '16'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M17">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '17'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M18">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '18'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M19">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '19'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M20">
+            <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '20'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
+            <option value="M21">
+                <?php
+                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '21'";
+                    $result = $conn -> query($consulta);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo $row["GeneroMS"];
+                    }
+                ?>
+            </option>
         </select>
         
         <a id='creacion' href='<?php if(isset($_SESSION['id'])){echo"creacionmusica/crear.php";}else{echo"../../user/loginRegister/login/login.php";} ?>'><button>+</button></a>
