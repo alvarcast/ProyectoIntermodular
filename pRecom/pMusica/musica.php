@@ -37,16 +37,25 @@
            <div class="objderecha">
                     
                 <?php
-
-                if(isset($_SESSION['id'])){
-                    include "../pfp.php";
-                }else{
                     echo "  <div class='login'>
-                                <a href='../../user/loginRegister/login/login.php'>Iniciar Sesion</a>
-                            </div>  ";
-            
-                }
-
+                                <a href='../../FrontPage/index.php'>Inicio</a>
+                            </div>";
+                    if(isset($_SESSION['id'])){
+                        echo "  <div class='login'>
+                                <a href='../user/usuario/usu.php'>Perfil</a>
+                                </div>";
+                                
+                        echo "  <div class='login'>
+                                <form action='../../common/php/cerrar.php'>
+                                    <button type='submit' name='logout'>Cerrar Sesion</button>
+                                </form>
+                                </div>";
+                    }else{
+                        echo "  <div class='login'>
+                                    <a href='../user/loginRegister/login/login.php'>Iniciar Sesion</a>
+                                </div>  ";
+                    }
+                    
                 ?>
 
              <div class="barra">
@@ -79,234 +88,331 @@
     </section>
 
     <div class="selectores">
-        <select id="selec1">
-            <option value="Destacado">Destacado</option>
-            <option value="Lo mas Reciente">Lo mas Reciente</option>
-            <option value="En Alza">En Alza</option>
-        </select>
-        <select id="selecsus">
-            <option value="M0">Generos</option>
-            <option value="M1">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '1'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M2">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '2'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M3">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '3'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M4">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '4'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M5">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '5'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M6">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '6'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M7">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '7'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M8">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '8'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M9">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '9'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M10">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '10'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M11">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '11'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M12">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '12'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M13">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '13'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M14">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '14'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M15">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '15'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M16">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '16'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M17">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '17'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M18">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '18'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M19">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '19'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M20">
-            <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '20'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-            <option value="M21">
-                <?php
-                    $consulta = "SELECT GeneroMS FROM genero_m WHERE ID = '21'";
-                    $result = $conn -> query($consulta);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo $row["GeneroMS"];
-                    }
-                ?>
-            </option>
-        </select>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+            <select name ="opcion">
+                <option value="0">Mas nuevo</option>
+                <option value="1">Mas antiguo</option>
+                <option value="2">Nombre</option>
+                <option value="3">Autor</option>
+                <option value="4">Valoracion</option>
+            </select>
+            <select name ="opcion2" class="selecsus">
+                <option value="0">Todos</option>
+                <option value="1">Clasica</option>
+                <option value="2">Jazz</option>
+                <option value="3">Blues</option>
+                <option value="4">Gospel</option>
+                <option value="5">Soul</option>
+                <option value="6">Pop</option>
+                <option value="7">Rock and Roll</option>
+                <option value="8">Country</option>
+                <option value="9">Electronica</option>
+                <option value="10">Disco</option>
+                <option value="11">Reggae</option>
+                <option value="12">Salsa</option>
+                <option value="13">Flamenco</option>
+                <option value="14">Ranchera</option>
+                <option value="15">Rap</option>
+                <option value="16">Reggaeton</option>
+                <option value="17">Metal</option>
+                <option value="18">Funk</option>
+                <option value="19">Bossa Nova</option>
+                <option value="20">Melodica</option>
+                <option value="21">Infantil</option>
+
+            </select>
+            <button id="sbusqueda" type="submit">🔍</button>
+        </form>
         
-        <a id='creacion' href='<?php if(isset($_SESSION['id'])){echo"creacionmusica/crear.php";}else{echo"../../user/loginRegister/login/login.php";} ?>'><button>+</button></a>
+        <a id='creacion' href='<?php if(isset($_SESSION['id'])){echo"creacionmusica/crear.php";}else{echo"../../user/loginRegister/login/login.php";}; ?>'><button>+</button></a>
+    </div>
 
 
     </div>
 
     <?php
 
-        include "musicafetch.php";
+        include "../../common/php/conexion.php";
 
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $opcion = $_POST['opcion'];
+            $opcion2 = $_POST['opcion2'];
+
+            if ($opcion2 == 1) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 2) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 3) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 4) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 5) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 6) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 7) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 8) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 9) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 10) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 11) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 12) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 13) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 14) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 15) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 16) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 17) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 18) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 19) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 20) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif ($opcion2 == 21) {
+                if($opcion == 1){
+                    include "fetch/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/musicafetch.php";
+                }
+            } elseif($opcion2 == 0) {
+                if($opcion == 1){
+                    include "fetchnowhere/musicafetchold.php";
+                }elseif($opcion == 2){
+                    include "fetchnowhere/musicafetchname.php";
+                }elseif($opcion == 3){
+                    include "fetchnowhere/musicafetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetchnowhere/musicafetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetchnowhere/musicafetch.php";
+                }
+            }
+        }else{
+            include "fetchnowhere/musicafetch.php";
+        }
+        
     ?>
 
     <footer>
