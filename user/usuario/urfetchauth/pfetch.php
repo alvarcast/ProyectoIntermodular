@@ -14,7 +14,7 @@ FROM recomendacion_p p
 INNER JOIN usuarios u ON u.idusuario = p.idusuario
 INNER JOIN genero_ps g ON g.idgenerops = p.idgeneropelicula
 WHERE p.idusuario = '.$_SESSION['id'].'
-ORDER BY idpelicula DESC';
+ORDER BY director ASC';
 
 $mysqliresult = $conn->query($sql);
 $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);
@@ -48,7 +48,7 @@ $imagen = "../../pRecom/pPeliculas/img/".$item['imgpelicula']."";
             <div class='info'>
                 <div class='cabezaRecom'>
                     <p id='desc1'>Cancion: <?= htmlspecialchars($item['nombre'], ENT_QUOTES, 'UTF-8') ?></p>
-                    <p id='desc1'>Director: <?= htmlspecialchars($item['director'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <p id='desc1'>Direccion: <?= htmlspecialchars($item['director'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p>Genero: <?= htmlspecialchars($item['generops'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p id='desc2'>Usuario: <?= htmlspecialchars($item['nombreusuario'], ENT_QUOTES, 'UTF-8') ?></p>
                 </div>

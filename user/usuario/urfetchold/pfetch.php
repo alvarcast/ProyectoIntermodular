@@ -14,7 +14,7 @@ FROM recomendacion_p p
 INNER JOIN usuarios u ON u.idusuario = p.idusuario
 INNER JOIN genero_ps g ON g.idgenerops = p.idgeneropelicula
 WHERE p.idusuario = '.$_SESSION['id'].'
-ORDER BY idpelicula DESC';
+ORDER BY idpelicula ASC';
 
 $mysqliresult = $conn->query($sql);
 $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);

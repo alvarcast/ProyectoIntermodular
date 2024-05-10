@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crear Recomendacion</title>
-  <link rel="stylesheet" href="createstyles.css">
+  <link rel="stylesheet" href="../../createstyles.css">
   <link rel="icon" type="image/x-icon" href="../../../common/img/logo.png">
 </head>
 <body>
@@ -36,14 +36,25 @@
           
             <?php
             
-            if(isset($_SESSION['id'])){
-                include "pfp.php";
-            }else{
+              if(isset($_SESSION['id'])){
                 echo "  <div class='login'>
-                            <a href='../../../user/loginRegister/login/login.php'>Iniciar Sesion</a>
-                        </div>  ";
+                            <a href='../../../FrontPage/index.php'>Inicio</a>
+                        </div>";
+
+                echo "  <div class='login'>
+                        <a href='../../user/usuario/usu.php'>Perfil</a>
+                        </div>";
                         
-            }
+                echo "  <div class='login'>
+                        <form action='../../../common/php/cerrar.php'>
+                            <button type='submit' name='logout'>Cerrar Sesion</button>
+                        </form>
+                        </div>";
+              }else{
+                  echo "  <div class='login'>
+                              <a href='../../user/loginRegister/login/login.php'>Iniciar Sesion</a>
+                          </div>  ";
+              }
 
             ?>
 

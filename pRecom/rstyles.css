@@ -194,9 +194,10 @@ header{
     margin-left: 5%;
 }
 
-#selec1, #selecsus{
+select{
     border: solid 5px;
-    width: fit-content;
+    width: 10em;
+    height: 4em;
     border-color: #191919;
     background-color: #212529;
     color: white;
@@ -204,8 +205,17 @@ header{
     font-size: 100%;
 }
 
-#selecsus{
-    float: right;
+#sbusqueda{
+    border: solid 5px;
+    width: 3em;
+    height: 3em;
+    border-color: #191919;
+    background-color: #212529;
+    color: white;
+    padding: 1%;
+    font-size: 100%;
+    margin-left: 0.5em;
+    cursor: pointer;
 }
 
 #creacion{
@@ -320,7 +330,7 @@ header{
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
-    margin-top: 2em;
+    margin-top: auto;
 }
 
 .likedislike p{
@@ -420,10 +430,6 @@ footer a{
         flex-direction: column;
     }
 
-    .selector{
-        font-size: 50%;
-    }
-
     .objderecha{
         margin-right: 5%;
     }
@@ -490,6 +496,14 @@ footer a{
 
     .selectores{
         flex-direction: column;
+        text-align: center;
+    }
+
+    #creacion{
+        margin-top: 0.5em;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .wrapper{

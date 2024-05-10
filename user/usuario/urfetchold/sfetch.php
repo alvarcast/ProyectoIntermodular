@@ -1,20 +1,20 @@
 <?php
 
-$sql = 'SELECT idpelicula,
+$sql = 'SELECT idserie,
 nombre,
-director,
+direccion,
 texto,
 valoracion,
-imgpelicula,
+imgserie,
 likes,
 dislikes,
 nombreusuario,
 generops
-FROM recomendacion_p p
-INNER JOIN usuarios u ON u.idusuario = p.idusuario
-INNER JOIN genero_ps g ON g.idgenerops = p.idgeneropelicula
-WHERE p.idusuario = '.$_SESSION['id'].'
-ORDER BY idpelicula DESC';
+FROM recomendacion_s s
+INNER JOIN usuarios u ON u.idusuario = s.idusuario
+INNER JOIN genero_ps g ON g.idgenerops = s.idgeneroserie
+WHERE s.idusuario = '.$_SESSION['id'].'
+ORDER BY idserie ASC';
 
 $mysqliresult = $conn->query($sql);
 $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);
@@ -35,7 +35,7 @@ if($item['valoracion'] == 1){
     $valoracion = "../../common/img/5star.png";
 }
 
-$imagen = "../../pRecom/pPeliculas/img/".$item['imgpelicula']."";
+$imagen = "../../pRecom/pSeries/img/".$item['imgserie']."";
 
 ?>
 
@@ -48,7 +48,7 @@ $imagen = "../../pRecom/pPeliculas/img/".$item['imgpelicula']."";
             <div class='info'>
                 <div class='cabezaRecom'>
                     <p id='desc1'>Cancion: <?= htmlspecialchars($item['nombre'], ENT_QUOTES, 'UTF-8') ?></p>
-                    <p id='desc1'>Director: <?= htmlspecialchars($item['director'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <p id='desc1'>Direccion: <?= htmlspecialchars($item['direccion'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p>Genero: <?= htmlspecialchars($item['generops'], ENT_QUOTES, 'UTF-8') ?></p>
                     <p id='desc2'>Usuario: <?= htmlspecialchars($item['nombreusuario'], ENT_QUOTES, 'UTF-8') ?></p>
                 </div>
@@ -60,7 +60,7 @@ $imagen = "../../pRecom/pPeliculas/img/".$item['imgpelicula']."";
                         <textarea name="newtxt"><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
                     <div class="edidel">
-                        <input name='idm' id='rid' value="<?= htmlspecialchars($item['idpelicula'], ENT_QUOTES, 'UTF-8') ?>"></input>
+                        <input name='idm' id='rid' value="<?= htmlspecialchars($item['idserie'], ENT_QUOTES, 'UTF-8') ?>"></input>
                         <input name="idgenerico" id="idg" value="1"></input>
                         <button id="editar" type="submit">Enviar texto</button>
                     </div>
@@ -68,7 +68,7 @@ $imagen = "../../pRecom/pPeliculas/img/".$item['imgpelicula']."";
             </div>
             <div class="edidel">
                 <form id="dedit" method="POST" action="delete.php">
-                    <input name='idm2' id='rid' value="<?= htmlspecialchars($item['idpelicula'], ENT_QUOTES, 'UTF-8') ?>"></input>
+                    <input name='idm2' id='rid' value="<?= htmlspecialchars($item['idserie'], ENT_QUOTES, 'UTF-8') ?>"></input>
                     <button onclick="return confirm('¿Seguro que quieres eliminar la recomendacion?');" id="borrar" type="submit">-</button>
                 </form>
             </div>

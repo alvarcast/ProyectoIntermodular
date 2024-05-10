@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $file = $_POST["imgusu"];
 
   if($_FILES['file']['name'] == "") {
-    // No file was selected for upload, your (re)action goes here
     
     $file = $imgusu;
 
@@ -36,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Getting uploaded file
     $file = $_FILES['file']['name'];
-
-    //crop_image($file,"300");
   }
 
   // Preparar la consulta SQL para la inserción de datos

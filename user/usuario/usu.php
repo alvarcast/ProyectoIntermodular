@@ -79,44 +79,24 @@
 
     <?php include "usuariofetch.php" ?>
 
-    <section class="wrapper">
-        <div class="top">Recomendaciones</div>
-        <div class="bottom" aria-hidden="true">Recomendaciones</div>
-    </section>
-
     <div class="selectores">
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-            <select name="opcion" onchange="this.form.submit()">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+            <select name="opcion">
+                <option value="0">Todos</option>
                 <option value="1">Musica</option>
                 <option value="2">Videojuegos</option>
                 <option value="3">Peliculas</option>
                 <option value="4">Series</option>
             </select>
+            <select  name ="opcion2" class="selecsus">
+                <option value="0">Mas nuevo</option>
+                <option value="1">Mas antiguo</option>
+                <option value="2">Nombre</option>
+                <option value="3">Creador</option>
+                <option value="4">Valoracion</option>
+            </select>
+            <button id="sbusqueda" type="submit">🔍</button>
         </form>
-        <select class="selecsus">
-            <option value="0">Generos</option>
-            <option value="1">Clasica</option>
-            <option value="2">Jazz</option>
-            <option value="3">Blues</option>
-            <option value="4">Gospel</option>
-            <option value="5">Soul</option>
-            <option value="6">Pop</option>
-            <option value="7">Rock and Roll</option>
-            <option value="8">Country</option>
-            <option value="9">Electronica</option>
-            <option value="10">Disco</option>
-            <option value="11">Reggae</option>
-            <option value="12">Salsa</option>
-            <option value="13">Flamenco</option>
-            <option value="14">Ranchera</option>
-            <option value="15">Rap</option>
-            <option value="16">Reggaeton</option>
-            <option value="17">Metal</option>
-            <option value="18">Funk</option>
-            <option value="19">Bossa Nova</option>
-            <option value="20">Melodica</option>
-            <option value="21">Infantil</option>
-        </select>
         
         <a id='creacion' href='../../pRecom/pMusica/creacionmusica/crear.php'><button>+</button></a>
     </div>
@@ -132,16 +112,135 @@
     die("Conexión fallida: " . $conn->connect_error);
     }
 
-    if(isset($_POST['opcion'])) {
-        // No file was selected for upload, your (re)action goes here
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $opcion = $_POST['opcion'];
-    
+        $opcion2 = $_POST['opcion2'];
+        
+        if($opcion2 == 1){
+            if($opcion == 1){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchold/mfetch.php";
+            }elseif($opcion == 2){
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchold/vfetch.php";
+            }elseif($opcion == 3){
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchold/pfetch.php";
+            }elseif($opcion == 4){
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchold/sfetch.php";
+            }elseif($opcion == 0){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchold/mfetch.php";
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchold/vfetch.php";
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchold/pfetch.php";
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchold/sfetch.php";
+            }
+        }elseif($opcion2 == 2){
+            if($opcion == 1){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchname/mfetch.php";
+            }elseif($opcion == 2){
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchname/vfetch.php";
+            }elseif($opcion == 3){
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchname/pfetch.php";
+            }elseif($opcion == 4){
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchname/sfetch.php";
+            }elseif($opcion == 0){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchname/mfetch.php";
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchname/vfetch.php";
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchname/pfetch.php";
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchname/sfetch.php";
+            }
+        }elseif($opcion2 == 3){
+            if($opcion == 1){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchauth/mfetch.php";
+            }elseif($opcion == 2){
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchauth/vfetch.php";
+            }elseif($opcion == 3){
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchauth/pfetch.php";
+            }elseif($opcion == 4){
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchauth/sfetch.php";
+            }elseif($opcion == 0){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchauth/mfetch.php";
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchauth/vfetch.php";
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchauth/pfetch.php";
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchauth/sfetch.php";
+            }
+        }elseif($opcion2 == 4){
+            if($opcion == 1){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchrating/mfetch.php";
+            }elseif($opcion == 2){
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchrating/vfetch.php";
+            }elseif($opcion == 3){
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchrating/pfetch.php";
+            }elseif($opcion == 4){
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchrating/sfetch.php";
+            }elseif($opcion == 0){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetchrating/mfetch.php";
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetchrating/vfetch.php";
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetchrating/pfetch.php";
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetchrating/sfetch.php";
+            }
+        }elseif($opcion2 == 0){
+            if($opcion == 1){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetch/mfetch.php";
+            }elseif($opcion == 2){
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetch/vfetch.php";
+            }elseif($opcion == 3){
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetch/pfetch.php";
+            }elseif($opcion == 4){
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetch/sfetch.php";
+            }elseif($opcion == 0){
+                echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
+                include "urfetch/mfetch.php";
+                echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+                include "urfetch/vfetch.php";
+                echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+                include "urfetch/pfetch.php";
+                echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+                include "urfetch/sfetch.php";
+            }
+        }
     }else{
-        $opcion = 1;
-    }
-
-    if($opcion == 1){
+        echo"<section class='wrapper'><div class='top'>Musica</div><div class='bottom' aria-hidden='true'>Musica</div></section>";
         include "urfetch/mfetch.php";
+        echo"<section class='wrapper'><div class='top'>Videojuegos</div><div class='bottom' aria-hidden='true'>Videojuegos</div></section>";
+        include "urfetch/vfetch.php";
+        echo"<section class='wrapper'><div class='top'>Peliculas</div><div class='bottom' aria-hidden='true'>Peliculas</div></section>";
+        include "urfetch/pfetch.php";
+        echo"<section class='wrapper'><div class='top'>Series</div><div class='bottom' aria-hidden='true'>Series</div></section>";
+        include "urfetch/sfetch.php";
     }
 
     ?>
@@ -151,7 +250,6 @@
     </footer>
 
     <script src="../../common/js/sidebar.js"></script>
-    <script src="../../common/js/likedislike.js"></script>
     
 </body>
 </html>

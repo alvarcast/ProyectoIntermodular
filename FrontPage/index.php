@@ -38,7 +38,15 @@
             <?php
             
             if(isset($_SESSION['id'])){
-                include "pfp.php";
+              echo "  <div class='login'>
+                        <a href='../user/usuario/usu.php'>Perfil</a>
+                      </div>";
+                      
+              echo "  <div class='login'>
+                        <form action='../../common/php/cerrar.php'>
+                          <button type='submit' name='logout'>Cerrar Sesion</button>
+                        </form>
+                      </div>";
             }else{
                 echo "  <div class='login'>
                             <a href='../user/loginRegister/login/login.php'>Iniciar Sesion</a>
@@ -120,16 +128,13 @@
     </section>
   </div>
 
-  <div class="prelogo">
-    <img src="img/breakinglogo.png" alt="LogoBreakingBad">
-  </div>
-
 <div class="container">
   <div class="containerimg">
     <img id="primeraimagencartas" src="img/bad.jpg" alt="">
     <img id="segundaimagencartas" src="img/jesi.jpg" alt="">
     <img id="terceraimagencartas" src="img/breaking.jpg" alt="">
   </div>
+  <h1>Breaking Bad</h1>
   <div class="containertexto">
     <img id="imagenescondida" src="img/bad.jpg" alt="">
     <h5>Gran argumento</h5>
@@ -143,16 +148,13 @@
   </div>
 </div>
 
-<div class="prelogo">
-  <img src="img/estopalogo.png" alt="LogoEstopa">
-</div>
-
 <div class="container">
   <div class="containerimg">
     <img id="primeraimagencartas" src="img/estopa.png" alt="">
     <img id="segundaimagencartas" src="img/estopaconcierto.png" alt="">
     <img id="terceraimagencartas" src="img/quetalasnovias.png" alt="">
   </div>
+  <h1>Estopa</h1>
   <div class="containertexto">
     <img id="imagenescondida" src="img/estopa.png" alt="">
     <h5>Un gran dúo</h5>
@@ -166,16 +168,13 @@
   </div>
 </div>
 
-<div class="prelogo">
-  <img src="img/pokelogo.png" alt="LogoPokemon">
-</div>
-
 <div class="container">
   <div class="containerimg">
     <img id="primeraimagencartas" src="img/poke.png" alt="">
     <img id="segundaimagencartas" src="img/legendarios.jpg" alt="">
     <img id="terceraimagencartas" src="img/pokeanime.jpg" alt="">
   </div>
+  <h1>Pokemon</h1>
   <div class="containertexto">
     <img id="imagenescondida" src="img/poke.png" alt="">
     <h5>La mayor marca</h5>
@@ -189,16 +188,13 @@
   </div>
 </div>
 
-<div class="prelogo">
-  <img src="img/oro.webp" alt="DoradoLogo">
-</div>
-
 <div class="container">
   <div class="containerimg">
     <img id="primeraimagencartas" src="img/devuelvaneloro.png" alt="">
     <img id="segundaimagencartas" src="img/españita.png" alt="">
     <img id="terceraimagencartas" src="img/conquista.png" alt="">
   </div>
+  <h1>El Dorado</h1>
   <div class="containertexto">
     <img id="imagenescondida" src="img/devuelvaneloro.png" alt="">
     <h5>Protagonistas Encantadores</h5>

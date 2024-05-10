@@ -13,8 +13,9 @@ generomusica
 FROM recomendacion_m m
 INNER JOIN usuarios u ON u.idusuario = m.idusuario
 INNER JOIN genero_m g ON g.idgeneromusica = m.idgeneromusica
-WHERE m.idusuario = '.$_SESSION['id'].'
-ORDER BY idmusica DESC';
+WHERE g.idgeneromusica = '.$opcion2.'
+ORDER BY idmusica ASC
+LIMIT 20';
 
 $mysqliresult = $conn->query($sql);
 $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);
@@ -35,7 +36,7 @@ if($item['valoracion'] == 1){
     $valoracion = "../../common/img/5star.png";
 }
 
-$imagen = "../../pRecom/pMusica/img/".$item['imgmusica']."";
+$imagen = "img/".$item['imgmusica']."";
 
 ?>
 
@@ -55,22 +56,17 @@ $imagen = "../../pRecom/pMusica/img/".$item['imgmusica']."";
                 <div class='estrellas'>
                     <img src='<?php echo htmlspecialchars($valoracion); ?>'>
                 </div>
-                <form class="etexto" action="rtxtedit.php" method="post">
-                    <div class='texto'>
-                        <textarea name="newtxt"><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></textarea>
-                    </div>
-                    <div class="edidel">
-                        <input name='idm' id='rid' value="<?= htmlspecialchars($item['idmusica'], ENT_QUOTES, 'UTF-8') ?>"></input>
-                        <input name="idgenerico" id="idg" value="1"></input>
-                        <button id="editar" type="submit">Enviar texto</button>
-                    </div>
-                </form>
+                <div class='texto'>
+                    <p><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></p>
+                </div>
             </div>
-            <div class="edidel">
-                <form id="dedit" method="POST" action="delete.php">
-                    <input name='idm2' id='rid' value="<?= htmlspecialchars($item['idmusica'], ENT_QUOTES, 'UTF-8') ?>"></input>
-                    <button onclick="return confirm('¿Seguro que quieres eliminar la recomendacion?');" id="borrar" type="submit">-</button>
-                </form>
+            <div class='likedislike'>
+                <div class='like'>
+                    <button class="btn" id='green'>↑</button>
+                </div>
+                <div class='dislike'>
+                    <button class="btn" id='red'>↓</button>
+                </div>
             </div>
         </div>
     </div>

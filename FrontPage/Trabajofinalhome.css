@@ -287,20 +287,8 @@ header{
     transform: translateX(-0.02em);
 }
 
-.prelogo{
-    text-align: center;
-    margin: 1%;
-
-}
-
-.prelogo img{
-    width: 100%;
-    height: 100%;
-}
-
 .container{
     height: fit-content;
-    width: fit-content;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -308,6 +296,12 @@ header{
     border-color: #191919;
     background-color: #212529;
     width: 95%;
+    margin-top: 3em;
+}
+
+.container h1{
+    color: rgb(146, 14, 14);
+    margin-top: 1em;
 }
 
 .container img{
@@ -385,11 +379,6 @@ footer a:hover{
 }
 
 @media only screen and (max-width: 1485px) {
-
-    .prelogo img{
-        height: 60%;
-        width: 60%;
-    }
 
     #primeraimagencartas, #segundaimagencartas, #terceraimagencartas{
         height: 25%;
@@ -508,11 +497,6 @@ footer a:hover{
 
     .containertexto p{
         font-size: xx-large;
-    }
-
-    .prelogo img{
-        height: 50%;
-        width: 50%;
     }
 
     .prev, .next {

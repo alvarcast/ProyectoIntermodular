@@ -15,7 +15,13 @@ $results = $mysqliresult->fetch_all(MYSQLI_ASSOC);
 
 <?php foreach ($results as $item):
 
-$imagen = "img/".$item['img']."";
+$imagen = $item['img'];
+
+if($imagen == 'x'){
+    $imagen = "../../common/img/default.png";
+}else{
+    $imagen = "img/".$item['img']."";
+}
 
 ?>
 

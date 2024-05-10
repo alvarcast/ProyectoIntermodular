@@ -21,11 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Preparar la consulta SQL para la inserción de datos
   $sql = "INSERT INTO usuarios(NombreUsuario, NombreReal, Correo, Contrasenia, Descripcion, Karma, Img)
-        VALUES('$nombreusu', '$nombre', '$correo', $contrasenia,NULL,0,NULL)";
+        VALUES('$nombreusu', '$nombre', '$correo', $contrasenia,NULL,0,'x')";
 
   // Ejecutar la consulta
   if ($conn->query($sql) === TRUE) {
-    header("location: ../login/login.php");
+    header("Location: ../login/login.php");
   } else {
     echo "Error al insertar datos: " . $conn->error . "<br>";
   }
