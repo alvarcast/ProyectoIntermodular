@@ -96,33 +96,6 @@ header{
     background-color: #919191;
 }
 
-.barra input[type=text] {
-    font-size: 15px;
-    border: solid 1px;
-    border-color: #636363;
-    background-color: #212529;
-    color: white;
-    border-radius: 20px 20px 20px 20px;
-    padding: 3px;
-    padding-left: 5px;
-    margin-right: 0.5em;
-}
-
-.barra button {
-    background: #636363;
-    font-size: 15px;
-    border: solid 1px;
-    border-color: #636363;
-    cursor: pointer;
-    color: white;
-    border-radius: 20px 20px 20px 20px;
-    padding: 3px;
-}
-
-.barra button:hover{
-    background-color: #919191;
-}
-
 .login{
     font-size: large;
     margin-right: 1.5em;
@@ -324,7 +297,13 @@ textarea{
 .selectores{
     display: flex;
     margin-bottom: 3%;
-    margin-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectores form{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 select{
@@ -659,21 +638,18 @@ footer a:hover{
         display: none;
     }
 
+    .objderecha{
+        margin-right: 0;
+    }
+
     .login{
-        display: none;
+        margin-right: 1em;
     }
 
     .objizquierda button{
         display: block;
     }
 
-    .objderecha{
-        margin-right: 5%;
-    }
-
-    h1{
-        font-size: 400%;
-    }
 }
 
 @media only screen and (max-width: 900px){
@@ -785,7 +761,7 @@ footer a:hover{
 @media only screen and (min-width: 1520px){
 
     .info{
-        font-size: 150%;
+        font-size: 120%;
     }
     
 }

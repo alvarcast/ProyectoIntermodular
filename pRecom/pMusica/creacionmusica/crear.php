@@ -42,7 +42,7 @@
                         </div>";
 
                 echo "  <div class='login'>
-                        <a href='../../user/usuario/usu.php'>Perfil</a>
+                        <a href='../../../user/usuario/usu.php'>Perfil</a>
                         </div>";
                         
                 echo "  <div class='login'>
@@ -58,10 +58,6 @@
 
             ?>
 
-            <div class="barra">
-                <input type="text" placeholder="Busqueda..." name="search">
-                <button type="submit">Buscar</button>
-            </div>
         </div>
     </div>
     <div class="sidetxt" style="display:none" id="mySidebar">
@@ -69,18 +65,16 @@
 
         <?php
 
-        if(isset($_SESSION['id'])){
-          echo "<a id='opcion' href='../../../user/usuario/usu.php'><button id='opcion'>Perfil</button></a>";
-        }else{
+        if(isset($_SESSION['id']) == false){
           echo "<a id='opcion' href='../../../user/loginRegister/login/login.php'><button id='opcion'>Iniciar Sesion</button></a>";
         }
 
         ?>
-        <a id="opcion" href="../../../FrontPage/index.php"><button id="opcion">Inicio</button></a>
+        
         <a id="opcion" href="../musica.php"><button id="opcion">Musica</button></a>
-        <a id="opcion" href="../pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
-        <a id="opcion" href="../pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
-        <a id="opcion" href="../pSeries/series.php"><button id="opcion">Series</button></a>
+        <a id="opcion" href="../../pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
+        <a id="opcion" href="../../pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
+        <a id="opcion" href="../../pSeries/series.php"><button id="opcion">Series</button></a>
     </div>
   </header>
   
@@ -89,12 +83,12 @@
 
     <div class="nombre">
       <label for="nombre">Nombre de la cancion:</label><br>
-      <input type="text" id='nombre' name='nombre'>
+      <input type="text" id='nombre' name='nombre' maxlength="50">
     </div>
 
     <div class="artista">
       <label for="artista">Artista:</label><br>
-      <input type="text" id='artista' name='artista'>
+      <input type="text" id='artista' name='artista' maxlength="30">
     </div>
 
     <div class="genero">
@@ -127,41 +121,23 @@
 
     <div class="texto">
       <label for="texto">Tu opinion:</label><br>
-      <textarea id="texto" name="texto" rows="5" cols="50"></textarea>
+      <textarea id="texto" name="texto" rows="5" cols="50" maxlength="300"></textarea>
     </div>
 
     <div class="valoracion">
       <label for="valoracion">Valoracion</label><br>
-      <input type="number" id='valoracion' name='valoracion'>
+      <input type="range" min="1" max="5" id='valoracion' name='valoracion'><br>
     </div>
 
     <div class="imagen">
       <label for="file">Imagen</label><br>
-      <input type="file" id="file" name="file"  accept="image/*">
+      <input type="file" id="file" name="file" accept="image/*">
     </div>
 
     <div class="boton">
       <input type="submit" value="Enviar">
     </div>
   </form>
-
-  <script>
-
-    const mogus = document.getElementById("mogus");
-
-    mogus.addEventListener("submit", function(event){
-      event.preventDefault();
-    })
-
-    let mogusData = new FormData(mogus);
-      mogusData.get("nombre");
-      mogusData.get("artista");
-      mogusData.get("genero");
-      mogusData.get("texto");
-      mogusData.get("valoracion");
-      mogusData.get("imagen");
-
-  </script>
 
   <footer>
     <a href="../../../user/avisoslegales/index.html" target="_blank">Avisos Legales</a>

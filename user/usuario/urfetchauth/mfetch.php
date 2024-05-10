@@ -57,7 +57,7 @@ $imagen = "../../pRecom/pMusica/img/".$item['imgmusica']."";
                 </div>
                 <form class="etexto" action="rtxtedit.php" method="post">
                     <div class='texto'>
-                        <textarea name="newtxt"><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></textarea>
+                        <textarea name="newtxt" placeholder='Escribe algo...' maxlength='300'><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
                     <div class="edidel">
                         <input name='idm' id='rid' value="<?= htmlspecialchars($item['idmusica'], ENT_QUOTES, 'UTF-8') ?>"></input>

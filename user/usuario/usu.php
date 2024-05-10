@@ -27,10 +27,10 @@
         <div class="objheader">
             <div class="objizquierda">
                 <button onclick="abrir()">☰</button>
-                <a href="../../pRecom/pMusica/index.html">Musica</a>
-                <a href="../../pRecom/pVideojuegos/index.html">Videojuegos</a>
-                <a href="../../pRecom/pPelis/index.html">Peliculas</a>
-                <a href="../../pRecom/pSeries/index.html">Series</a>
+                <a href="../../pRecom/pMusica/musica.php">Musica</a>
+                <a href="../../pRecom/pVideojuegos/videojuegos.php">Videojuegos</a>
+                <a href="../../pRecom/pPelis/peliculas.php">Peliculas</a>
+                <a href="../../pRecom/pSeries/series.php">Series</a>
             </div>
             <div class="objderecha">
                 <div class="login">
@@ -40,31 +40,17 @@
                 <?php
 
                 echo "  <div class='login'>
-                            <form action='../../common/php/cerrar.php'>
+                            <form action='../common/php/cerrar.php'>
                                 <button type='submit' name='logout'>Cerrar Sesion</button>
                             </form>
                         </div>";
 
                 ?>
 
-                <div class="barra">
-                    <input type="text" placeholder="Busqueda..." name="search">
-                    <button type="submit">Buscar</button>
-                </div>
             </div>
         </div>
         <div class="sidetxt" style="display:none" id="mySidebar">
             <button id="cerrar" onclick="cerrar()">&times;</button>
-            <a id="opcion" href="../../FrontPage/Trabajofinalhome.html"><button id="opcion">Inicio</button></a>
-
-            <?php
-
-            echo "  <form action='../../common/php/cerrar.php'>
-                        <a id='opcion' href='../../FrontPage/Trabajofinalhome.html'><button id='opcion'>Cerrar Sesion</button></a>
-                    </form>";
-
-            ?>
-
             <a id="opcion" href="../../pRecom/pMusica/musica.php"><button id="opcion">Musica</button></a>
             <a id="opcion" href="../../pRecom/pVideojuegos/index.php"><button id="opcion">Videojuegos</button></a>
             <a id="opcion" href="../../pRecom/pPelis/index.php"><button id="opcion">Peliculas</button></a>
@@ -98,7 +84,6 @@
             <button id="sbusqueda" type="submit">🔍</button>
         </form>
         
-        <a id='creacion' href='../../pRecom/pMusica/creacionmusica/crear.php'><button>+</button></a>
     </div>
     
 

@@ -22,15 +22,10 @@
                 <div class="inicio">
                     <a href="../../../FrontPage/index.php">Inicio</a>
                 </div>
-                <div class="barra">
-                    <input type="text" placeholder="Busqueda..." name="search">
-                    <button type="submit">Buscar</button>
-                </div>
             </div>
         </div>
         <div class="sidetxt" style="display:none" id="mySidebar">
             <button id="cerrar" onclick="cerrar()">&times;</button>
-            <a id="opcion" href="../../../FrontPage/index.php"><button id="opcion">Inicio</button></a>
             <a id="opcion" href="../../../pRecom/pMusica/musica.php"><button id="opcion">Musica</button></a>
             <a id="opcion" href="../../../pRecom/pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
             <a id="opcion" href="../../../pRecom/pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
@@ -45,9 +40,9 @@
                 $userControl = $_GET['control'];
                 if($userControl != null){
                     if($userControl == 2){
-                        echo"<h4>Hay algun problema con el usuario</h4>";
+                        echo"<h4>El usuario indicado no esiste</h4>";
                     }elseif($userControl == 3){
-                        echo"<h4>Hay algun problema con la contraseña</h4>";
+                        echo"<h4>La contraseña es incorrecta</h4>";
                     }
                 }
             }

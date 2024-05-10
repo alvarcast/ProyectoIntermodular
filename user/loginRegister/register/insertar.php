@@ -19,16 +19,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $contrasenia = $_POST["contrasenia"];
   $repecon = $_POST["repecon"];
 
-  // Preparar la consulta SQL para la inserción de datos
-  $sql = "INSERT INTO usuarios(NombreUsuario, NombreReal, Correo, Contrasenia, Descripcion, Karma, Img)
-        VALUES('$nombreusu', '$nombre', '$correo', $contrasenia,NULL,0,'x')";
+  $sql = "SELECT nombreusuario from usuarios WHERE nombreusuario LIKE '{$nombreusu}'";
 
-  // Ejecutar la consulta
-  if ($conn->query($sql) === TRUE) {
-    header("Location: ../login/login.php");
-  } else {
-    echo "Error al insertar datos: " . $conn->error . "<br>";
-  }
-
+  $result = $conn->query($sql);
   
+  if($result->num_rows > 0){
+    header("location: register.php?control=2");
+  }else{
+    if($contrasenia != $repecon){
+      header("location: register.php?control=3");
+    }else{
+      // Preparar la consulta SQL para la inserción de datos
+      $sql = "INSERT INTO usuarios(NombreUsuario, NombreReal, Correo, Contrasenia, Descripcion, Karma, Img)
+      VALUES('$nombreusu', '$nombre', '$correo', $contrasenia,NULL,0,'x')";
+  
+      // Ejecutar la consulta
+      if ($conn->query($sql) === TRUE) {
+      header("Location: ../login/login.php");
+      } else {
+      echo "Error al insertar datos: " . $conn->error . "<br>";
+      }
+    }
+  }
 }

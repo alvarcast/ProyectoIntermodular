@@ -43,7 +43,7 @@
                       </div>";
                       
               echo "  <div class='login'>
-                        <form action='../../common/php/cerrar.php'>
+                        <form action='../common/php/cerrar.php'>
                           <button type='submit' name='logout'>Cerrar Sesion</button>
                         </form>
                       </div>";
@@ -56,10 +56,6 @@
 
             ?>
 
-            <div class="barra">
-                <input type="text" placeholder="Busqueda..." name="search">
-                <button type="submit">Buscar</button>
-            </div>
         </div>
     </div>
     <div class="sidetxt" style="display:none" id="mySidebar">
@@ -68,9 +64,11 @@
         <?php
 
         if(isset($_SESSION['id'])){
-          echo "<a id='opcion' href='../user/usuario/usu.php'><button id='opcion'>Perfil</button></a>";
-        }else{
-          echo "<a id='opcion' href='../user/loginRegister/login/login.php'><button id='opcion'>Iniciar Sesion</button></a>";
+          echo "  <div class='login'>
+                        <form action='../../common/php/cerrar.php'>
+                          <button type='submit' name='logout'>Cerrar Sesion</button>
+                        </form>
+                      </div>";
         }
 
         ?>

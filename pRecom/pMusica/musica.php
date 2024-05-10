@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="../rstyles.css">
     <link rel="icon" type="image/x-icon" href="../../common/img/logo.png">
 </head>
-<style media="screen">
-    .seleccionado{
-        color: white;
-        outline: 1px solid black;
-    }
-</style>
 <body>
 
     <?php
@@ -42,7 +36,7 @@
                             </div>";
                     if(isset($_SESSION['id'])){
                         echo "  <div class='login'>
-                                <a href='../user/usuario/usu.php'>Perfil</a>
+                                <a href='../../user/usuario/usu.php'>Perfil</a>
                                 </div>";
                                 
                         echo "  <div class='login'>
@@ -52,20 +46,24 @@
                                 </div>";
                     }else{
                         echo "  <div class='login'>
-                                    <a href='../user/loginRegister/login/login.php'>Iniciar Sesion</a>
+                                    <a href='../../user/loginRegister/login/login.php'>Iniciar Sesion</a>
                                 </div>  ";
                     }
                     
                 ?>
-
-             <div class="barra">
-                    <input type="text" placeholder="Busqueda..." name="search">
-                    <button type="submit">Buscar</button>
-             </div>
+                <form method="post" action="searchres.php" id="barraform">
+                    <div class="barra">
+                        <input type="text" placeholder="Busqueda..." name="search">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
            </div>
         </div>
         <div class="sidetxt" style="display:none" id="mySidebar">
           <button id="cerrar" onclick="cerrar()">&times;</button>
+
+          <a id="opcionOC" href="../../FrontPage/index.php"><button id="opcion">Inicio</button></a>
+          
           <?php
 
                 if(isset($_SESSION['id'])){
@@ -75,10 +73,10 @@
                 }
 
             ?>
-          <a id="opcionOC" href="../../FrontPage/Trabajofinalhome.html"><button id="opcion">Inicio</button></a>
-          <a id="opcion" href="../pVideojuegos/index.html"><button id="opcion">Videojuegos</button></a>
-          <a id="opcion" href="../pPelis/index.html"><button id="opcion">Peliculas</button></a>
-          <a id="opcion" href="../pSeries/index.html"><button id="opcion">Series</button></a>
+          
+          <a id="opcion" href="../pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
+          <a id="opcion" href="../pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
+          <a id="opcion" href="../pSeries/series.php"><button id="opcion">Series</button></a>
         </div>
     </header>
 
@@ -415,6 +413,7 @@
         
     ?>
 
+        <br><br><br>
     <footer>
         <a href="../../user/avisoslegales/index.html" target="_blank">Avisos Legales</a>
     </footer>

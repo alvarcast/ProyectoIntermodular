@@ -10,9 +10,9 @@ likes,
 dislikes,
 nombreusuario,
 generomusica
-FROM recomendacion_m
-INNER JOIN usuarios ON usuarios.idusuario = recomendacion_m.idusuario
-INNER JOIN genero_m ON genero_m.idgeneromusica = recomendacion_m.idgeneromusica
+FROM recomendacion_m m
+INNER JOIN usuarios u ON u.idusuario = m.idusuario
+INNER JOIN genero_m g ON g.idgeneromusica = m.idgeneromusica
 ORDER BY idmusica DESC
 LIMIT 20';
 

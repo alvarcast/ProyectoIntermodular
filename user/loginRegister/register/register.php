@@ -12,52 +12,61 @@
     <div class="objheader">
         <div class="objizquierda">
             <button onclick="abrir()">☰</button>
-            <a href="../../../pRecom/pMusica/index.html">Musica</a>
-            <a href="../../../pRecom/pVideojuegos/index.html">Videojuegos</a>
-            <a href="../../../pRecom/pPelis/index.html">Peliculas</a>
-            <a href="../../../pRecom/pSeries/index.html">Series</a>
+            <a href="../../../pRecom/pMusica/musica.php">Musica</a>
+            <a href="../../../pRecom/pVideojuegos/videojuegos.php">Videojuegos</a>
+            <a href="../../../pRecom/pPelis/peliculas.php">Peliculas</a>
+            <a href="../../../pRecom/pSeries/series.php">Series</a>
         </div>
         <div class="objderecha">
             <div class="inicio">
-                <a href="../../../FrontPage/Trabajofinalhome.html">Inicio</a>
-            </div>
-            <div class="barra">
-                <input type="text" placeholder="Busqueda..." name="search">
-                <button type="submit">Buscar</button>
+                <a href="../../../FrontPage/index.php">Inicio</a>
             </div>
         </div>
     </div>
     <div class="sidetxt" style="display:none" id="mySidebar">
         <button id="cerrar" onclick="cerrar()">&times;</button>
-        <a id="opcion" href="../../../FrontPage/Trabajofinalhome.html"><button id="opcion">Inicio</button></a>
-        <a id="opcion" href="../../../pRecom/pMusica/index.html"><button id="opcion">Musica</button></a>
-        <a id="opcion" href="../../../pRecom/pVideojuegos/index.html"><button id="opcion">Videojuegos</button></a>
-        <a id="opcion" href="../../../pRecom/pPelis/index.html"><button id="opcion">Peliculas</button></a>
-        <a id="opcion" href="../../../pRecom/pSeries/index.html"><button id="opcion">Series</button></a>
+        <a id="opcion" href="../../../pRecom/pMusica/musica.php"><button id="opcion">Musica</button></a>
+        <a id="opcion" href="../../../pRecom/pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
+        <a id="opcion" href="../../../pRecom/pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
+        <a id="opcion" href="../../../pRecom/pSeries/series.php"><button id="opcion">Series</button></a>
     </div>
   </header>
 
     <form form method='post' action='insertar.php'>
+
+        <?php
+            if(isset($_GET["control"])) { 
+                $userControl = $_GET['control'];
+                if($userControl != null){
+                    if($userControl == 2){
+                        echo"<h4>El nombre de usuario indicado ya esta en uso</h4>";
+                    }elseif($userControl == 3){
+                        echo"<h4>Las contraseñas no coinciden</h4>";
+                    }
+                }
+            }
+        ?>
+
         <h1>Registrarse</h1>
         <div class="nombreusu">
             <label for="nombreusu">Nombre de usuario:</label><br>
-            <input type="text" name="nombreusu" id="nombreusu"><br>
+            <input type="text" name="nombreusu" id="nombreusu" maxlength="20"><br>
         </div>
         <div class="usuario">
             <label for="nombre">Nombre real:</label><br>
-            <input type="text" name="nombre" id="nombre"><br>
+            <input type="text" name="nombre" id="nombre" maxlength="50"><br>
         </div>
         <div class="correo">
             <label for="correo">Correo:</label><br>
-            <input type="email" name="correo" id="correo"><br>
+            <input type="email" name="correo" id="correo" maxlength="100"><br>
         </div>
         <div class="contrasenia">
             <label for="contrasenia">Contraseña:</label><br>
-            <input type="password" name="contrasenia" id="contrasenia"><br>
+            <input type="password" name="contrasenia" id="contrasenia" maxlength="50"><br>
         </div>
         <div class="repecon">
             <label for="repecon">Repetir Contraseña:</label><br>
-            <input type="password" name="repecon" id="repecon"><br>
+            <input type="password" name="repecon" id="repecon" maxlength="50"><br>
         </div>
         <div class="boton">
             <input type="submit" onclick="validar()" value="Registrarse">
@@ -70,7 +79,6 @@
     </footer>
 
     <script src="../../../common/js/sidebar.js"></script>
-    <script src="../../../common/js/checkpsw.js"></script>
 
 </body>
 </html>

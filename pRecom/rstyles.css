@@ -147,6 +147,10 @@ header{
     padding: 3px;
 }
 
+.login button:hover{
+    background-color: #919191;
+}
+
 .login a{
     color: #636363;
 }

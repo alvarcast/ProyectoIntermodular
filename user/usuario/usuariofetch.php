@@ -47,7 +47,7 @@ if($imagen == 'x'){
             <h3>Descripcion:</h3>
             <form action="actualizar.php" method="post" enctype="multipart/form-data">
 
-                <textarea name='desc' placeholder='Escribe algo sobre ti...'><?= htmlspecialchars($item['descripcion'], ENT_QUOTES, 'UTF-8') ?></textarea>
+                <textarea name='desc' placeholder='Escribe algo sobre ti...' maxlength='300'><?= htmlspecialchars($item['descripcion'], ENT_QUOTES, 'UTF-8') ?></textarea>
                 
                 <div class="alibot">
                     <p>Cambiar imagen:</p>
