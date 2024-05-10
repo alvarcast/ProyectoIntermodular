@@ -29,7 +29,7 @@
                 <button onclick="abrir()">☰</button>
                 <a href="../../pRecom/pMusica/musica.php">Musica</a>
                 <a href="../../pRecom/pVideojuegos/videojuegos.php">Videojuegos</a>
-                <a href="../../pRecom/pPelis/peliculas.php">Peliculas</a>
+                <a href="../../pRecom/pPeliculas/peliculas.php">Peliculas</a>
                 <a href="../../pRecom/pSeries/series.php">Series</a>
             </div>
             <div class="objderecha">
@@ -53,7 +53,7 @@
             <button id="cerrar" onclick="cerrar()">&times;</button>
             <a id="opcion" href="../../pRecom/pMusica/musica.php"><button id="opcion">Musica</button></a>
             <a id="opcion" href="../../pRecom/pVideojuegos/index.php"><button id="opcion">Videojuegos</button></a>
-            <a id="opcion" href="../../pRecom/pPelis/index.php"><button id="opcion">Peliculas</button></a>
+            <a id="opcion" href="../../pRecom/pPeliculas/index.php"><button id="opcion">Peliculas</button></a>
             <a id="opcion" href="../../pRecom/pSeries/index.php"><button id="opcion">Series</button></a>
         </div>
     </header>

@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $uid = $_SESSION['id'];
 
   // Preparar la consulta SQL para la inserción de datos
-  $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, likes, dislikes, IdUsuario, IdGeneroMusica)
-          VALUES ('$nombre', '$artista', '$texto', $valoracion, '$file',0,0, $uid, $genero)";
+  $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, IdUsuario, IdGeneroMusica)
+          VALUES ('$nombre', '$artista', '$texto', $valoracion, '$file', $uid, $genero)";
 
 
   // Ejecutar la consulta

@@ -164,11 +164,9 @@
                     </div>
                     <div class='likedislike'>
                         <div class='like'>
-                            <p class="totallikes"><?= htmlspecialchars($item['likes'], ENT_QUOTES, 'UTF-8') ?></p>
                             <button class="btn" id='green'>↑</button>
                         </div>
                         <div class='dislike'>
-                            <p class="totaldislikes"><?= htmlspecialchars($item['dislikes'], ENT_QUOTES, 'UTF-8') ?></p>
                             <button class="btn" id='red'>↓</button>
                         </div>
                     </div>

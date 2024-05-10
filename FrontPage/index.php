@@ -30,7 +30,7 @@
             <button onclick="abrir()">☰</button>
             <a href="../pRecom/pMusica/musica.php">Musica</a>
             <a href="../pRecom/pVideojuegos/videojuegos.php">Videojuegos</a>
-            <a href="../pRecom/pPelis/peliculas.php">Peliculas</a>
+            <a href="../pRecom/pPeliculas/peliculas.php">Peliculas</a>
             <a href="../pRecom/pSeries/series.php">Series</a>
         </div>
         <div class="objderecha">

@@ -25,7 +25,7 @@ if($imagen == 'x'){
 
 ?>
 
-<div class="cajausuario">
+    <div class="cajausuario">
         <div class="cabeza">
             <div class="imagencabeza">
             <img src='<?php echo htmlspecialchars($imagen); ?>'></a>
@@ -60,5 +60,9 @@ if($imagen == 'x'){
             </form>
         </div>
     </div>
+
+    <form method="post" class="deluser" action="borrarcuenta.php">
+        <button type="submit" onclick="return confirm('¿Seguro que quiere eliminar su cuenta?');">Borrar cuenta</button>
+    </form>
 
 <?php endforeach; ?>

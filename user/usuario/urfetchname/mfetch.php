@@ -69,6 +69,7 @@ $imagen = "../../pRecom/pMusica/img/".$item['imgmusica']."";
             <div class="edidel">
                 <form id="dedit" method="POST" action="delete.php">
                     <input name='idm2' id='rid' value="<?= htmlspecialchars($item['idmusica'], ENT_QUOTES, 'UTF-8') ?>"></input>
+                    <input name="idgenerico" id="idg" value="1"></input>
                     <button onclick="return confirm('¿Seguro que quieres eliminar la recomendacion?');" id="borrar" type="submit">-</button>
                 </form>
             </div>
