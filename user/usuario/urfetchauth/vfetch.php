@@ -6,8 +6,6 @@ compania,
 texto,
 valoracion,
 imgvideojuego,
-likes,
-dislikes,
 nombreusuario,
 generovideojuego
 FROM recomendacion_v v

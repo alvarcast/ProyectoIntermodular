@@ -79,16 +79,30 @@
   </header>
   
   <form class="formulario" method="post" action="insertar.php" enctype="multipart/form-data">
+
+  <?php
+      if(isset($_GET["control"])) { 
+        $userControl = $_GET['control'];
+        if($userControl != null){
+          if($userControl == 2){
+            echo"<h4>Por favor, elija genero</h4>";
+          }elseif($userControl == 3){
+            echo"<h4>Por favor, ponga una imagen</h4>";
+          }
+        }
+      }
+    ?>
+    
     <h1 id="textoform">Recomendacion de Pelicula</h1>
 
     <div class="nombre">
       <label for="nombre">Nombre de la pelicula:</label><br>
-      <input type="text" id='nombre' name='nombre' maxlength="50">
+      <input type="text" id='nombre' name='nombre' maxlength="100">
     </div>
 
     <div class="artista">
       <label for="artista">Direccion:</label><br>
-      <input type="text" id='artista' name='artista' maxlength="30">
+      <input type="text" id='artista' name='artista' maxlength="100">
     </div>
 
     <div class="genero">

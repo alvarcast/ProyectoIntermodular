@@ -329,6 +329,18 @@
                 }elseif($opcion == 0){
                     include "fetch/videojuegofetch.php";
                 }
+            } elseif ($opcion2 == 17) {
+                if($opcion == 1){
+                    include "fetch/videojuegofetchold.php";
+                }elseif($opcion == 2){
+                    include "fetch/videojuegofetchname.php";
+                }elseif($opcion == 3){
+                    include "fetch/videojuegofetchauth.php";
+                }elseif($opcion == 4){
+                    include "fetch/videojuegofetchrating.php";
+                }elseif($opcion == 0){
+                    include "fetch/videojuegofetch.php";
+                }
             } elseif($opcion2 == 0) {
                 if($opcion == 1){
                     include "fetchnowhere/videojuegofetchold.php";

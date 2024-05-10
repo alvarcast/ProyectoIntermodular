@@ -40,7 +40,7 @@
                 <?php
 
                 echo "  <div class='login'>
-                            <form action='../common/php/cerrar.php'>
+                            <form action='../../common/php/cerrar.php'>
                                 <button type='submit' name='logout'>Cerrar Sesion</button>
                             </form>
                         </div>";

@@ -79,16 +79,30 @@
   </header>
   
   <form class="formulario" method="post" action="insertar.php" enctype="multipart/form-data">
+
+    <?php
+      if(isset($_GET["control"])) { 
+        $userControl = $_GET['control'];
+        if($userControl != null){
+          if($userControl == 2){
+            echo"<h4>Por favor, elija genero</h4>";
+          }elseif($userControl == 3){
+            echo"<h4>Por favor, ponga una imagen</h4>";
+          }
+        }
+      }
+    ?>
+
     <h1 id="textoform">Recomendacion de Videojuego</h1>
 
     <div class="nombre">
       <label for="nombre">Nombre del videojuego:</label><br>
-      <input type="text" id='nombre' name='nombre' maxlength="50">
+      <input type="text" id='nombre' name='nombre' maxlength="100">
     </div>
 
     <div class="artista">
       <label for="artista">Desarrollador:</label><br>
-      <input type="text" id='artista' name='artista' maxlength="30">
+      <input type="text" id='artista' name='artista' maxlength="100">
     </div>
 
     <div class="genero">
@@ -97,20 +111,21 @@
         <option value="0">Generos</option>
         <option value="1">Accion</option>
         <option value="2">Aventura</option>
-        <option value="3">Ciencia Ficcion</option>
-        <option value="4">Comedia</option>
-        <option value="5">Policiaca</option>
-        <option value="6">Terror</option>
-        <option value="7">Romance</option>
-        <option value="8">Drama</option>
-        <option value="9">Suspense</option>
-        <option value="10">Fantasia</option>
-        <option value="11">Historica</option>
-        <option value="12">Documental</option>
-        <option value="13">Animacion</option>
-        <option value="14">Musical</option>
-        <option value="15">Social</option>
-        <option value="16">Deporte</option>
+        <option value="3">Arcade</option>
+        <option value="4">Deportes</option>
+        <option value="5">Estrategia</option>
+        <option value="6">Simulacion</option>
+        <option value="7">De Mesa</option>
+        <option value="8">Musical</option>
+        <option value="9">Sandbox</option>
+        <option value="10">Indie</option>
+        <option value="11">Puzles</option>
+        <option value="12">Idle</option>
+        <option value="13">Terror</option>
+        <option value="14">RPG</option>
+        <option value="15">Supervivencia</option>
+        <option value="16">Novela Visual</option>
+        <option value="17">Plataformas</option>
     </select>
     </div>
 

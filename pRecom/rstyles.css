@@ -58,10 +58,6 @@ header{
     cursor: pointer;
 }
 
-.objizquierda button:hover{
-    background-color: #636363;
-}
-
 .sidetxt{
     flex-direction: column;
     width: 100%;
@@ -155,10 +151,6 @@ header{
     color: #636363;
 }
 
-.login a:hover{
-    background-color: #535353;
-}
-
 .wrapper {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -220,6 +212,10 @@ select{
     font-size: 100%;
     margin-left: 0.5em;
     cursor: pointer;
+}
+
+#sbusqueda button:hover{
+    background-color: #535353;
 }
 
 #creacion{
@@ -389,6 +385,10 @@ select{
 
 .dislike{
     margin-left: 1em;
+}
+
+#rid {
+    display: none;
 }
 
 footer{

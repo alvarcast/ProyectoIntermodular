@@ -6,8 +6,6 @@ direccion,
 texto,
 valoracion,
 imgserie,
-likes,
-dislikes,
 nombreusuario,
 generops
 FROM recomendacion_s s

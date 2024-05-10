@@ -6,8 +6,6 @@ director,
 texto,
 valoracion,
 imgpelicula,
-likes,
-dislikes,
 nombreusuario,
 generops
 FROM recomendacion_p p

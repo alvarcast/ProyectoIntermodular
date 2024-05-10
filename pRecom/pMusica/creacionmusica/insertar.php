@@ -19,33 +19,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $texto = $_POST["texto"];
   $valoracion = $_POST["valoracion"];
 
-  if(isset($_FILES['file'])){
+  if($genero == 0){
+    header("location: crear.php?control=2");
+  }else{
     
-    move_uploaded_file($_FILES['file']['tmp_name'],"../img/" . $_FILES['file']['name']);
-
-    // Getting uploaded file
-    $file = $_FILES['file']['name'];
-
-    //crop_image($file,"300");
-
-  }
-
-  $uid = $_SESSION['id'];
-
-  // Preparar la consulta SQL para la inserción de datos
-  $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, IdUsuario, IdGeneroMusica)
-          VALUES ('$nombre', '$artista', '$texto', $valoracion, '$file', $uid, $genero)";
-
-
-  // Ejecutar la consulta
-  if ($conn->query($sql) === TRUE) {
-      $sql2 = "UPDATE usuarios SET karma = (karma + 10) WHERE IdUsuario = ". $_SESSION['id'];
-      if ($conn->query($sql2) === TRUE) {
-        header("location: ../musica.php");
+    if($_FILES['file']['name'] != ""){
+    
+      move_uploaded_file($_FILES['file']['tmp_name'],"../img/" . $_FILES['file']['name']);
+  
+      $file = $_FILES['file']['name'];
+  
+      $uid = $_SESSION['id'];
+  
+      // Preparar la consulta SQL para la inserción de datos
+      $sql = "INSERT INTO recomendacion_m (Nombre, Artista, Texto, Valoracion, Imgmusica, IdUsuario, IdGeneroMusica)
+              VALUES ('$nombre', '$artista', '$texto', $valoracion, '$file', $uid, $genero)";
+    
+    
+      // Ejecutar la consulta
+      if ($conn->query($sql) === TRUE) {
+          $sql2 = "UPDATE usuarios SET karma = (karma + 10) WHERE IdUsuario = ". $_SESSION['id'];
+          if ($conn->query($sql2) === TRUE) {
+            header("location: ../musica.php");
+          } else {
+            echo "Error al insertar datos: " . $conn->error . "<br>";
+          }
       } else {
-        echo "Error al insertar datos: " . $conn->error . "<br>";
+          echo "Error al insertar datos: " . $conn->error . "<br>";
       }
-  } else {
-      echo "Error al insertar datos: " . $conn->error . "<br>";
-  }
+  
+    }else{
+      header("location: crear.php?control=3");
+    }
+  } 
 }

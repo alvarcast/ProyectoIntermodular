@@ -90,16 +90,16 @@
     </div>
     <div class="ssimg">
       <div class="mySlides">
-        <img src="img/eldenbg.webp"/>
+        <img src="img/opp.webp"/>
       </div>
       <div class="mySlides">
         <img src="img/fmabbg.jpe"/>
       </div>
       <div class="mySlides">
-        <img src="img/godfatherbg.jpg"/>
+        <img src="img/ncs.jpg"/>
       </div>
       <div class="mySlides">
-        <img src="img/quaoarbg.jpg"/>
+        <img src="img/amogus.jpeg"/>
       </div>
     </div>
     <div class="next">

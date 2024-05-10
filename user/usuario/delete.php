@@ -81,4 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     echo "Error al insertar datos: " . $conn->error . "<br>";
   }
+
+  // Cerrar la conexión
+  $conn->close();
 }

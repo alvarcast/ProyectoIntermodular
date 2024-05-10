@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     unlink("img/$imgusu");
 
-    // Getting uploaded file
     $file = $_FILES['file']['name'];
   }
 

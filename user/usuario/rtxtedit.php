@@ -26,8 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       echo "Error al insertar datos: " . $conn->error . "<br>";
     }
-    // Cerrar la conexión
-    $conn->close();
     
   }elseif($idg == 2){
     $sql = "UPDATE recomendacion_v SET texto = '$txt' WHERE idvideojuego = ". $idv;
@@ -38,8 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       echo "Error al insertar datos: " . $conn->error . "<br>";
     }
-    // Cerrar la conexión
-    $conn->close();
 
   }elseif($idg == 3){
     $sql = "UPDATE recomendacion_p SET texto = '$txt' WHERE idpelicula = ". $idv;
@@ -50,8 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       echo "Error al insertar datos: " . $conn->error . "<br>";
     }
-    // Cerrar la conexión
-    $conn->close();
     
   }elseif($idg == 4){
     $sql = "UPDATE recomendacion_s SET texto = '$txt' WHERE idserie = ". $idv;
@@ -62,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       echo "Error al insertar datos: " . $conn->error . "<br>";
     }
-    // Cerrar la conexión
-    $conn->close();
     
   }
+  // Cerrar la conexión
+  $conn->close();
   
 }

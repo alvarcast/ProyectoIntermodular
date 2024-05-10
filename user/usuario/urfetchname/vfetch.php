@@ -6,8 +6,6 @@ compania,
 texto,
 valoracion,
 imgvideojuego,
-likes,
-dislikes,
 nombreusuario,
 generovideojuego
 FROM recomendacion_v v
@@ -35,7 +33,7 @@ if($item['valoracion'] == 1){
     $valoracion = "../../common/img/5star.png";
 }
 
-$imagen = "../../pRecom/pSeries/img/".$item['imgvideojuego']."";
+$imagen = "../../pRecom/pVideojuegos/img/".$item['imgvideojuego']."";
 
 ?>
 

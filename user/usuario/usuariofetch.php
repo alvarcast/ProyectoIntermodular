@@ -37,7 +37,7 @@ if($imagen == 'x'){
                         <p><?= htmlspecialchars($item['nombreusuario'], ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
                     <div class="sec2">
-                        <h2>Puntuacion:</h2>
+                        <h2>Participacion:</h2>
                         <p><?= htmlspecialchars($item['karma'], ENT_QUOTES, 'UTF-8') ?></p>
                     </div>
                 </div>

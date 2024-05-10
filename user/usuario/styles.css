@@ -352,6 +352,10 @@ select{
     cursor: pointer;
 }
 
+#sbusqueda button:hover{
+    background-color: #535353;
+}
+
 #creacion{
     cursor: pointer;
     margin-left: auto;
@@ -578,6 +582,11 @@ select{
 #rid , #idg{
     display: none;
 }
+
+.login button:hover{
+    background-color: #919191;
+}
+
 
 footer{
     background-color: #212529;

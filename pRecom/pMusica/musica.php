@@ -75,7 +75,7 @@
             ?>
           
           <a id="opcion" href="../pVideojuegos/videojuegos.php"><button id="opcion">Videojuegos</button></a>
-          <a id="opcion" href="../pPelis/peliculas.php"><button id="opcion">Peliculas</button></a>
+          <a id="opcion" href="../pPeliculas/peliculas.php"><button id="opcion">Peliculas</button></a>
           <a id="opcion" href="../pSeries/series.php"><button id="opcion">Series</button></a>
         </div>
     </header>

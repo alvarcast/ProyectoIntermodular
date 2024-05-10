@@ -58,12 +58,16 @@ $imagen = "img/".$item['imgmusica']."";
                 </div>
             </div>
             <div class='likedislike'>
-                <div class='like'>
-                    <button class="btn" id='green'>↑</button>
-                </div>
-                <div class='dislike'>
-                    <button class="btn" id='red'>↓</button>
-                </div>
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                    <div class='like'>
+                        <button class="btn" id='green' type="submit">↑</button>
+                    </div>
+                </form>
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                    <div class='dislike'>
+                        <button class="btn" id='red' type="submit">↓</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

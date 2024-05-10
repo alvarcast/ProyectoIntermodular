@@ -6,8 +6,6 @@ artista,
 texto,
 valoracion,
 imgmusica,
-likes,
-dislikes,
 nombreusuario,
 generomusica
 FROM recomendacion_m m
