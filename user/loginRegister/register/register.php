@@ -42,6 +42,10 @@
                         echo"<h4>El nombre de usuario indicado ya esta en uso</h4>";
                     }elseif($userControl == 3){
                         echo"<h4>Las contraseñas no coinciden</h4>";
+                    }elseif($userControl == 4){
+                        echo"<h4>El correo ya esta en uso</h4>";
+                    }elseif($userControl == 5){
+                        echo"<h4>La contraseña debe tener como minimo 8 caracteres, 1 mayuscula, 1 minuscula y un numero</h4>";
                     }
                 }
             }
@@ -62,7 +66,7 @@
         </div>
         <div class="contrasenia">
             <label for="contrasenia">Contraseña:</label><br>
-            <input type="password" name="contrasenia" id="contrasenia" maxlength="50"><br>
+            <input type="password" name="contrasenia" id="contrasenia" maxlength="50" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,50}$"><br>
         </div>
         <div class="repecon">
             <label for="repecon">Repetir Contraseña:</label><br>
