@@ -278,15 +278,15 @@ select{
 }
 
 .portada{
-    min-width: 500px;
-    width: 500px;
-    height: 500px;
+    min-width: 510px;
+    width: 510px;
+    height: 510px;
     display: flex;
     border-right: solid 10px #191919;
 }
 
 .portada img{
-    min-width: 500px;
+    min-width: 510px;
     width: 100%;
     height: 100%;
 }
