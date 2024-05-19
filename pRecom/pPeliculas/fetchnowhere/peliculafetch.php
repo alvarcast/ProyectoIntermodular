@@ -57,14 +57,6 @@ $imagen = "img/".$item['imgpelicula']."";
                     <p><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></p>
                 </div>
             </div>
-            <div class='likedislike'>
-                <div class='like'>
-                    <button class="btn" id='green'>↑</button>
-                </div>
-                <div class='dislike'>
-                    <button class="btn" id='red'>↓</button>
-                </div>
-            </div>
         </div>
     </div>
 </section>

@@ -57,18 +57,6 @@ $imagen = "img/".$item['imgmusica']."";
                     <p><?= htmlspecialchars($item['texto'], ENT_QUOTES, 'UTF-8') ?></p>
                 </div>
             </div>
-            <div class='likedislike'>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                    <div class='like'>
-                        <button class="btn" id='green' type="submit">↑</button>
-                    </div>
-                </form>
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-                    <div class='dislike'>
-                        <button class="btn" id='red' type="submit">↓</button>
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 </section>
